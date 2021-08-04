@@ -10,7 +10,7 @@ module.exports = (sequelize) => {
       primaryKey: true
     },
     name: {
-      type: 'aa',//DataTypes.STRING,
+      type: DataTypes.STRING,//DataTypes.STRING,
       allowNull: false,
     },
     image: {
@@ -18,7 +18,7 @@ module.exports = (sequelize) => {
       allowNull: false,
     },
     continete: {
-      type: DataTypes.ENUM({values: ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'] }),
+      type: DataTypes.ENUM({values: ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania', 'Polar'] }),
       allowNull: false
     },
     capital: {
