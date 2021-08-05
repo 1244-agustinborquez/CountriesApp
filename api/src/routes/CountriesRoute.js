@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const axios = require('axios');
-const { Country, Actividad } = require('../db');
+const {countryall, countryDetail , countryAllName} = require('../functions/queries.js')
+
 
 /**
  * 316 / 5000
@@ -13,6 +13,32 @@ Si no se proporciona ningún criterio, devuelve todas las instancias de la tabla
  */
 
 
-router.get('/', (req,res) => {
-
+router.get('/', async (req,res,next) => {
+    try {
+        const {name} = req.query
+        // res.send('Soy la ruta get de countries')
+        if (name) {
+            const forName = await countryAllName(name)
+            // le pregunto si tiene length forName si tiene devuelve el pais si no el mensaje
+            res.status(200).send(forName.length ? forName : [{msj: 'No se encontro el nombre del pais'}]);
+        } else {
+            const all = await countryall()
+            res.status(200).send(all);
+        }
+    } catch (error) {
+        next(error)
+    }
 })
+
+router.get('/:idPais', async (req, res, next) => {
+    try {
+        var { idPais } = req.params
+        var countieDetail = await countryDetail(idPais)
+        res.status(200).send(countieDetail)
+    } catch (error) {
+        next(error)
+    }
+})
+
+
+module.exports = router;
