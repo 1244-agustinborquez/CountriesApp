@@ -15,7 +15,7 @@ Si no se proporciona ningún criterio, devuelve todas las instancias de la tabla
 
 router.get('/', async (req,res,next) => {
     try {
-        const {name} = req.query
+        const { name } = req.query
         // res.send('Soy la ruta get de countries')
         if (name) {
             const forName = await countryAllName(name)

@@ -2,8 +2,9 @@ const { DataTypes } = require('sequelize');
 
 module.exports  = sequelize => {
     sequelize.define('actividad', {
-        nombre: {
-            type: DataTypes.STRING
+        name: {
+            type: DataTypes.STRING,
+            unique: true
         },
         dificultad: {
             type: DataTypes.INTEGER
