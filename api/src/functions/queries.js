@@ -3,7 +3,6 @@ const axios = require('axios');
 const { Country, Actividad } = require('../db');
 
 const countryall = async () => {
-
     let countries = await Country.findAll({
         attributes: [ 'ID', 'name', 'image', 'continente', 'capital' , 'poblacion' ]
     });
