@@ -1,0 +1,78 @@
+!!! comenzamos creando un archivo de constantes para poner nuestros endpoints hacia la base de datos asi no lo excribimos mal
+o nos ahorramos tiempo en repetirlo
+
+!!! Ahora vamnos a definir las actions en mi caso por ahora pondre las actions de = 
+{
+    ALL_COUTRYS,
+    COUNTRIES_DETAILS,
+    NAME_COUTRYS,
+    FILTER_REGION,
+    FILTER_ACTIVITY,
+    FILTER_POPULATION,
+    ORDER_NAME,
+    POST_ACTIVITY,
+    GET_ACTIVITY
+}
+
+!!! Ahora dejo el store configurado = {
+
+}
+
+!!! de ahi paso a crear las actions = 
+{
+    getCountry(),
+    getCountriesDetails(id),
+    getCountriesByName(name),
+}
+
+
+!!!  de ahi crear el reducer = {
+
+}
+
+//======================================================================================//
+
+!!! antes saltearemos a esta parte para dejar terminada la page home y el aboutMe
+
+//======================================================================================//
+
+/**       ayuda para ahcer el ui del home
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+*/
