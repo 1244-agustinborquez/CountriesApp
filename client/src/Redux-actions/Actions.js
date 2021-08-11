@@ -37,3 +37,39 @@ export function getCountriesByName(name) {
         });
     }
 }
+
+export function orderCountriesByContinent(continente) {
+    return function(dispatch) {
+            dispatch({
+                type: FILTER_REGION,
+                payload: continente
+            });
+    }
+}
+
+export function orderCountriesByPopulation(pupulation) {
+    return function(dispatch) {
+            dispatch({
+                type: FILTER_POPULATION,
+                payload: pupulation
+            });
+    }
+}
+
+export function orderCountriesByName(name) {
+    return function(dispatch) {
+            dispatch({
+                type: ORDER_NAME,
+                payload: name
+            });
+    }
+}
+
+export function orderCountriesByActivity(activity) {
+    return function(dispatch) {
+            dispatch({
+                type: FILTER_ACTIVITY,
+                payload: activity
+            });
+    }
+}

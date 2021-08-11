@@ -1,10 +1,16 @@
-import React from 'react'
-
+import React from 'react';
+import {Globals,LeandingMain} from './StyledMain.js';
+import Nav from '../../components/nav/Nav.jsx';
+import Index from '../../components/header/Index.jsx';
+import CardList from '../../components/cardList/CardList.jsx';
 function Main() {
     return (
-        <div>
-            Hola soy el main countriesss!!!!
-        </div>
+        <LeandingMain>
+            <Globals/>
+            <Nav/>
+            <Index/>
+            <CardList/>
+        </LeandingMain>
     )
 }
 
