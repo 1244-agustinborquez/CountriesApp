@@ -19,5 +19,5 @@ export const LeandingMain = styled.section`
     background-image: url('/fondo3.jpg'); 
     background-size: cover;
     background-repeat: no-repeat;
-    height: 625px;
+    height: 100vh;
 `

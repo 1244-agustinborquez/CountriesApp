@@ -3,11 +3,11 @@ import {Link} from 'react-router-dom';
 import {CountryCard,CountryFlag,CountryName,CountryContinent} from './StyledCard'
 function Card({country}) {
     return (
-        <Link to={`/country/${country.id}`}>
+        <Link to={`/country/${country.ID}`}>
         <CountryCard>
-            <CountryFlag src={country.imgFlag} alt="image Country No Found"/>
+            <CountryFlag src={country.image} alt="image Country No Found"/>
             <CountryName>{country.name}</CountryName>
-            <CountryContinent>{country.region}</CountryContinent>
+            <CountryContinent>{country.continente}</CountryContinent>
         </CountryCard>
         </Link>
     )

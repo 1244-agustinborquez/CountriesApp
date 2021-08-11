@@ -1,4 +1,4 @@
-import {ALL_COUTRIES,COUNTRIES_DETAILS,NAME_COUTRIES,FILTER_REGION,FILTER_ACTIVITY,FILTER_POPULATION,ORDER_NAME,POST_ACTIVITY,GET_ACTIVITY} from '../Redux-actions/constants';
+import {ALL_COUNTRIES,COUNTRIES_DETAILS,NAME_COUTRIES,FILTER_REGION,FILTER_ACTIVITY,FILTER_POPULATION,ORDER_NAME,POST_ACTIVITY,GET_ACTIVITY} from '../Redux-actions/constants';
 
 const initialState = {
     countriesLoaded: [],
@@ -6,8 +6,8 @@ const initialState = {
 }
 
 function rootReducer(state = initialState, action){
-    switch (action.payload) {
-        case ALL_COUTRIES:
+    switch (action.type) {
+        case ALL_COUNTRIES:
         return{
             ...state,
             countriesLoaded: action.payload

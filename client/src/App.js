@@ -10,10 +10,10 @@ import {getCountry} from './Redux-actions/Actions'
 import { useEffect } from "react";
 
 function App() {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getCountry());
-  }, [])
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   dispatch(getCountry());
+  // }, [dispatch])
 
   return (
     <Switch>
