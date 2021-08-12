@@ -1,13 +1,23 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {Content,SearchContent,FiltersContent} from './StyledHeader';
 import SearchBar from './SearchBar';
+import OrderByContinent from './OrderByContinent';
+import OrderByName from './OrderByName';
+import OrderPopulation from './OrderPopulation';
 function Index() {
+    const [search, setSearch] = useState();
+    const [region, setRegion] = useState('all');
+    const [sortByName, setSortByName] = useState('ASC');
+    const [sortByPopulation, setSortByPopulation] = useState("ASC");
     return (
         <Content>
             <SearchContent>
-                <SearchBar/>
+                <SearchBar state={search} setState={setSearch}/>
             </SearchContent>
             <FiltersContent>
+                <OrderByContinent state={region} setState={setRegion}/>
+                <OrderByName state={sortByName} setState={setSortByName}/>
+                <OrderPopulation state={sortByPopulation} setState={setSortByPopulation}/>
             </FiltersContent>
         </Content>
     )
