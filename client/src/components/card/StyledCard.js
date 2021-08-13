@@ -39,7 +39,6 @@ export const CountryCard = styled.div`
         height: 400px;
         box-shadow: 0 0 20px 0 ${colors.white};
     }
-
 `
 export const CountryFlag = styled.img`
     height: 160px;

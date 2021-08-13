@@ -6,14 +6,15 @@ import AboutMe from './pages/aboutMe/AboutMe';
 import CountryDetails from './pages/countryDetails/CountryDetails.jsx';
 import Form from './pages/form/Form.jsx'
 import { useDispatch } from 'react-redux';
-import {getCountry} from './Redux-actions/Actions'
+import {getCountry,getActivity} from './Redux-actions/Actions'
 import { useEffect } from "react";
-
 function App() {
-  // const dispatch = useDispatch();
-  // useEffect(() => {
-  //   dispatch(getCountry());
-  // }, [dispatch])
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getCountry());
+    dispatch(getActivity())
+  }, [])
 
   return (
     <Switch>
@@ -26,7 +27,7 @@ function App() {
       <Route exact path='/countries'>
         <Main/>
       </Route>
-      <Route exact path='/countries/:id'>
+      <Route exact path='/country/:id'>
         <CountryDetails/>
       </Route>
       <Route exact path='/newActivity'>

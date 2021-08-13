@@ -3,6 +3,8 @@ import {ALL_COUNTRIES,COUNTRIES_DETAILS,NAME_COUTRIES,FILTER_REGION,FILTER_ACTIV
 const initialState = {
     countriesLoaded: [],
     countriesLoaded2: [],
+    activityLoaded: [],
+    newActivity: {},
     countryDetails: {}
 }
 
@@ -97,17 +99,27 @@ function rootReducer(state = initialState, action){
                     countriesLoaded: countriesByRegion
                 }
             case FILTER_ACTIVITY:
-            const countrys = state.countriesLoaded2;
-            let countriesByActivity = [];
-            if (action.payload === "all") {
-                countriesByActivity = countrys;
-            } else {
+                const countrys = state.countriesLoaded2;
+                let countriesByActivity = [];
+                if (action.payload === "all") {
+                    countriesByActivity = countrys;
+                } else {
                 countriesByActivity = state.activitiesList.filter(activity => activity.name === action.payload)[0].countriesLoaded.map(countryWithActivity => countryWithActivity)
-            }
-            return {
-                ...state,
-                countriesLoaded: countriesByActivity
-            }    
+                }
+                return {
+                    ...state,
+                    countriesLoaded: countriesByActivity
+                }
+            case POST_ACTIVITY:
+                return {
+                    ...state,
+                    newActivity: action.payload
+                }
+            case POST_ACTIVITY:
+                return {
+                    ...state,
+                    activitiesList: action.payload
+                } 
         default:
             return{
                 ...state

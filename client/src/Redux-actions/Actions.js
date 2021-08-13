@@ -87,3 +87,15 @@ export function orderCountriesByActivity(activity) {
             });
     }
 }
+
+export function getActivity() {
+    return function(dispatch) {
+        return axios.get(ACTIVITY_URL)
+        .then(response => {
+            return dispatch({
+                type: GET_ACTIVITY,
+                payload: response.data
+            })
+        })
+    }
+}
