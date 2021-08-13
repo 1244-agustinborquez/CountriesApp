@@ -24,7 +24,7 @@ function OrderByContinent(props) {
                 <Option value="Polar">Polar</Option>
             </Select>
         </SelectDiv>
-        <Button type="submit" >Filter</Button>
+        <Button type="submit" value="Submit">Filter</Button>
     </Form>
     )
 }

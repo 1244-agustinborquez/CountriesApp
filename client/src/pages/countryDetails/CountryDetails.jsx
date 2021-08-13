@@ -50,16 +50,16 @@ function CountryDetails() {
             </Nav>
                 <CountryDetailContent>
                     <CountryCardDetail>
-                        <CountryDetailFlag src={countriesDetails[0].image}/>
-                        <CountryDetailName>{countriesDetails[0].name}</CountryDetailName>
-                        <CountryDetailContinent>{countriesDetails[0].continente}</CountryDetailContinent>
-                        <CountryDetailCapital>{countriesDetails[0].capital}</CountryDetailCapital>
-                        <CountryDetailSubregion>{countriesDetails[0].subregion}</CountryDetailSubregion>
-                        <CountryDetailArea>{countriesDetails[0].area}</CountryDetailArea>
-                        <CountryDetailPoblacion>{countriesDetails[0].poblacion}</CountryDetailPoblacion>
+                        <CountryDetailFlag src={countriesDetails[0]?.image}/>
+                        <CountryDetailName>{countriesDetails[0]?.name}</CountryDetailName>
+                        <CountryDetailContinent>{countriesDetails[0]?.continente}</CountryDetailContinent>
+                        <CountryDetailCapital>{countriesDetails[0]?.capital}</CountryDetailCapital>
+                        <CountryDetailSubregion>{countriesDetails[0]?.subregion}</CountryDetailSubregion>
+                        <CountryDetailArea>{countriesDetails[0]?.area}</CountryDetailArea>
+                        <CountryDetailPoblacion>{countriesDetails[0]?.poblacion}</CountryDetailPoblacion>
                     </CountryCardDetail>
                     <ActivityByCountryDetailContent>
-                    {
+                        {
                         countriesDetails[0]?.actividads?.length ?
                         countriesDetails[0]?.actividads.map(activity => <CountryCardDetail>
                             <ActivityByCountryTitle>Activity</ActivityByCountryTitle>
@@ -68,7 +68,8 @@ function CountryDetails() {
                             <ActivityByCountryDuracion>Duration: {activity.duracion}</ActivityByCountryDuracion>
                             <ActivityByCountryTemporada>Season: {activity.temporada}</ActivityByCountryTemporada>
                         </CountryCardDetail>) :
-                        <ActivityNoFound>This Country dosn't have any activities</ActivityNoFound>}
+                        <ActivityNoFound>This Country dosn't have any activities</ActivityNoFound>
+                        }
                     </ActivityByCountryDetailContent>
                 </CountryDetailContent>
         </Section>

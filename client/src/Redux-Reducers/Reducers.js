@@ -11,13 +11,13 @@ const initialState = {
 function rootReducer(state = initialState, action){
     switch (action.type) {
         case ALL_COUNTRIES:
-        return{
+        return {
             ...state,
             countriesLoaded: action.payload,
             countriesLoaded2: action.payload
         }
         case COUNTRIES_DETAILS:
-            return{
+            return {
                 ...state,
                 countryDetails: action.payload
             }
@@ -51,8 +51,8 @@ function rootReducer(state = initialState, action){
                     return 0;
                 }
             }
-            const countriesByName = state.countriesLoaded.sort(compareNames);
-            return{
+            const countriesByName = [...state.countriesLoaded.sort(compareNames)]
+            return {
                 ...state,
                 countriesLoaded: countriesByName
             }
@@ -65,7 +65,6 @@ function rootReducer(state = initialState, action){
                     }
                     if (a.poblacion < b.poblacion) {
                         return -1;
-                    } else {
                     }
                     return 0;
                 }
@@ -76,12 +75,11 @@ function rootReducer(state = initialState, action){
                     }
                     if (a.poblacion < b.poblacion) {
                         return 1;
-                    } else {
                     }
                     return 0;
                 }
             }
-            var countriesByPopulation = state.countriesLoaded.sort(comparePopulation)
+            var countriesByPopulation= [...state.countriesLoaded.sort(comparePopulation)]
                 return{
                     ...state,
                     countriesLoaded: countriesByPopulation
@@ -104,7 +102,7 @@ function rootReducer(state = initialState, action){
                 if (action.payload === "all") {
                     countriesByActivity = countrys;
                 } else {
-                countriesByActivity = state.activitiesList.filter(activity => activity.name === action.payload)[0].countriesLoaded.map(countryWithActivity => countryWithActivity)
+                    countriesByActivity = state.activityLoaded.filter(activity => activity.name === action.payload)[0].countriesLoaded.map(countryWithActivity => countryWithActivity)
                 }
                 return {
                     ...state,
@@ -115,10 +113,10 @@ function rootReducer(state = initialState, action){
                     ...state,
                     newActivity: action.payload
                 }
-            case POST_ACTIVITY:
+            case GET_ACTIVITY:
                 return {
                     ...state,
-                    activitiesList: action.payload
+                    activityLoaded: action.payload
                 } 
         default:
             return{

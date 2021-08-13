@@ -20,7 +20,7 @@ function OrderByName(props) {
                 <Option value="DESC">DESC</Option>
             </Select>
             </SelectDiv>
-        <Button type="submit" value="Submit">Filter</Button>
+        <Button type="submit" value="Submit">Name</Button>
         </Form> 
     )
 }

@@ -21,6 +21,7 @@ export const SearchContent = styled.div`
     margin-top: 50px;
 `
 export const FiltersContent = styled.div`
+    width: 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -43,24 +44,28 @@ export const SearchInput = styled.input`
 `
 
 export const SearchButtom = styled.button`
-    background: ${colors.moradoOscuro};
     border-radius: 0 25px 25px 0;
     border: 1px solid ${colors.white};
+    background: rgba(0,0,0,.8);
+    backdrop-filter: blur(5px);
     color: ${colors.white};
     font-size: 30px;
     cursor: pointer;
+    transition: all .4s ease-in-out;
     &:focus,&:active{
         outline: none;
     }
+        &:hover{
+            background: ${colors.white};
+            color: ${colors.black};
+        }
 `
 
 //-------------------     filters     --------------------------//
 
 /**order By Continent, Order By Name, Order By Population */
 export const Form = styled.form`
-    padding: 2%;
     text-align: center;
-    width: 80%;
     display: flex;
 `
 
@@ -120,6 +125,11 @@ export const Button = styled.button`
     background: rgba(0,0,0,.8);
     backdrop-filter: blur(5px);
     color: ${colors.white};
+    transition: all .4s ease-in-out;
+        &:hover{
+            background: ${colors.white};
+            color: ${colors.black};
+        }
 `
 
 
