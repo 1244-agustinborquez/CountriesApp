@@ -1,5 +1,5 @@
 import React from 'react';
-import {SearchInput,SearchButtom} from './StyledHeader';
+import {SearchInput,SearchButtom,FormStyled} from './StyledHeader';
 import {useDispatch} from 'react-redux';
 import {getCountriesByName} from '../../Redux-actions/Actions'
 function SearchBar(props) {

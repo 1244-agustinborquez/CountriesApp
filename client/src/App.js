@@ -4,7 +4,7 @@ import Home from './pages/home/Home.jsx';
 import Main from './pages/main/Main.jsx';
 import AboutMe from './pages/aboutMe/AboutMe';
 import CountryDetails from './pages/countryDetails/CountryDetails.jsx';
-import Form from './pages/form/Form.jsx'
+import FormContent from './pages/form/FormContent'
 import { useDispatch } from 'react-redux';
 import {getCountry,getActivity} from './Redux-actions/Actions'
 import { useEffect } from "react";
@@ -31,7 +31,7 @@ function App() {
         <CountryDetails/>
       </Route>
       <Route exact path='/newActivity'>
-        <Form/>
+        <FormContent/>
       </Route>
     </Switch>
 

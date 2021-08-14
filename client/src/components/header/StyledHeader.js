@@ -30,6 +30,10 @@ export const FiltersContent = styled.div`
 
 //-------------------     Search     --------------------------//
 
+export const FormStyled = styled.input`
+    display: flex;
+`
+
 export const SearchInput = styled.input`
     background: ${colors.white};
     border-radius: 25px 0 0 25px;

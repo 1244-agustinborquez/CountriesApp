@@ -88,6 +88,21 @@ export function orderCountriesByActivity(activity) {
     }
 }
 
+
+export function postActivity(activity) {
+    return function(dispatch) {
+        return axios.post(ACTIVITY_URL, activity)
+        .then(response => {
+            alert("Your Create A Activity")
+            return dispatch({
+                type:POST_ACTIVITY,
+                payload: response.data
+            })
+        })
+    }
+}
+
+
 export function getActivity() {
     return function(dispatch) {
         return axios.get(ACTIVITY_URL)
