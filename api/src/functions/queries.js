@@ -69,7 +69,7 @@ const activityPost = async (body) => {
 			temporada
 		}
 	});
-    pais = pais.split(',')
+    //pais = pais.split(',')
     // el promise.all es para q se resuelvan todas ya q recive un array de promesas(si uno fall fallan todos) si pasan todos te retorna u fullfile si no un rejected
     var aux = await Promise.all(pais.map( c => {
 		var country =  Country.findOne({
