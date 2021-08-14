@@ -32,7 +32,6 @@ function AboutMe() {
                         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero, perspiciatis error? Iure at amet ea nihil? 
                         Incidunt molestiae vero consectetur assumenda repellat quo laudantium, quam ea excepturi illo. Doloribus, incidunt.
                         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero, perspiciatis error? Iure at amet ea nihil? 
-                        Incidunt molestiae vero consectetur assumenda repellat quo laudantium, quam ea excepturi illo. Doloribus, incidunt.
                         </AboutText>
                     </AboutContentText>
                 </AboutContent>
