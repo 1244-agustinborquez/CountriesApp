@@ -15,15 +15,17 @@ function Form(props) {
     function handleOnSubmit(e) {
         e.preventDefault();
         dispatch(postActivity(props.state))
+        console.log(props.state);
+        alert("Your Create A Activity")
     }
     return (
-        <FormContent onSubmit={handleOnSubmit}>
+        <FormContent onSubmit={(e) => handleOnSubmit(e)}>
             <TitleForm>Create A New Activity</TitleForm>
             <InputForm
             type="text" 
             name="name" 
             value={props.state.name} 
-            onChange={handleInputChange}
+            onChange={(e) => handleInputChange(e)}
             autoComplete="off"
             placeholder='Name Activity...'
             />
@@ -31,7 +33,7 @@ function Form(props) {
             type="text" 
             name="dificultad" 
             value={props.state.dificultad} 
-            onChange={handleInputChange}
+            onChange={(e) => handleInputChange(e)}
             autoComplete="off"
             placeholder='Difficulty...'
             />
@@ -39,7 +41,7 @@ function Form(props) {
             type="text" 
             name="duracion" 
             value={props.state.duracion} 
-            onChange={handleInputChange}
+            onChange={(e) => handleInputChange(e)}
             autoComplete="off"            
             placeholder='Duration...'
             />
@@ -47,7 +49,7 @@ function Form(props) {
             type="text" 
             name="temporada" 
             value={props.state.temporada} 
-            onChange={handleInputChange}
+            onChange={(e) => handleInputChange(e)}
             autoComplete="off"            
             placeholder='Duration...'            
             placeholder='Season...'

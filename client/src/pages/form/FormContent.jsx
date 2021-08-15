@@ -18,10 +18,12 @@ function FormContent() {
         pais: []
     })
     function handleChangeButton(id) {
+        // console.log(id);
         setNewActivity({
             ...newActivity,
             pais: [...newActivity.pais, id]
         })
+        // console.log(newActivity);
     }
     return (
         <>
@@ -50,7 +52,7 @@ function FormContent() {
                         <CountriesDiv>
                             <StyledUList>
                             {countries?.length ? 
-                            countries?.map(country => <StyledLItem key={country.id}>{country.name} <ButtonChoose onClick={() => handleChangeButton(country.ID)}>Choose</ButtonChoose></StyledLItem>) : 
+                            countries?.map(country => <StyledLItem key={country.ID}>{country.name} <ButtonChoose onClick={() => handleChangeButton(country.name)}>Choose</ButtonChoose></StyledLItem>) : 
                             <li>Country not found</li>}
                             </StyledUList>
                         </CountriesDiv>

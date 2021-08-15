@@ -102,7 +102,17 @@ function rootReducer(state = initialState, action){
                 if (action.payload === "all") {
                     countriesByActivity = countrys;
                 } else {
-                    countriesByActivity = state.activityLoaded.filter(activity => activity.name === action.payload)[0].countriesLoaded.map(countryWithActivity => countryWithActivity)
+                    countriesByActivity = countrys.filter((c) => {
+                        if (c.actividads) {
+                            for (let i = 0; i < c.actividads.length; i++) {
+                                if (c.actividads[i].name === action.payload) {
+                                    return true;
+                                }
+                            }
+                        } else {
+                            return false;
+                        }
+                    });
                 }
                 return {
                     ...state,
