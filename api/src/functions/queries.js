@@ -93,6 +93,7 @@ const getActivity = async () => {
 
 const countryDetail = async (id) => {
     let countryId = await Country.findAll({
+        attributes: [ 'ID', 'name', 'image', 'continente', 'capital' , 'poblacion', 'area', 'subregion' ],
         where:{
             ID:{
                 [Op.eq]: id
