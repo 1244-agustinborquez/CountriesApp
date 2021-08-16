@@ -17,11 +17,11 @@ function FormContent() {
         temporada: '',
         pais: []
     })
-    function handleChangeButton(id) {
+    function handleChangeButton(name) {
         // console.log(id);
         setNewActivity({
             ...newActivity,
-            pais: [...newActivity.pais, id]
+            pais: [...newActivity.pais, name]
         })
         // console.log(newActivity);
     }
