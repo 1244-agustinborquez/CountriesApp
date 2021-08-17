@@ -102,7 +102,6 @@ const countryDetail = async (id) => {
         include: Actividad
     })
     
-
     //var countryId = await Country.findByPk(id);
     return countryId
 }
