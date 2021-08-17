@@ -1,6 +1,18 @@
 const { Country, conn } = require('../../src/db.js');
 const { expect } = require('chai');
 
+const country = {
+  area: 2780400,
+  capital: "Buenos Aires",
+  ID: "ARG",
+  image: "https://restcountries.eu/data/arg.svg",
+  name:"Argentina",
+  poblacion: 43590400,
+  continente: "Americas",
+  subregion: "South America",
+  actividads: []
+};
+
 describe('Country model', () => {
   before(() => conn.authenticate()
     .catch((err) => {
@@ -17,6 +29,7 @@ describe('Country model', () => {
       it('should work when its a valid name', () => {
         Country.create({ name: 'Argentina' });
       });
+
     });
   });
 });

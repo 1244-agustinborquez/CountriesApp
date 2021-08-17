@@ -20,17 +20,17 @@ const country = {
   subregion: "South America",
 };
 
-const countryRes = {
-  "ID": "ARG",
-  "name": "Argentina",
-  "image": "https://restcountries.eu/data/arg.svg",
-  "continente": "Americas",
-  "capital": "Buenos Aires",
-  "poblacion": 43590400,
-  "area": 2780400,
-  "subregion": "South America",
-  "actividads": []
-};
+// const countryRes = {
+//   "ID": "ARG",
+//   "name": "Argentina",
+//   "image": "https://restcountries.eu/data/arg.svg",
+//   "continente": "Americas",
+//   "capital": "Buenos Aires",
+//   "poblacion": 43590400,
+//   "area": 2780400,
+//   "subregion": "South America",
+//   "actividads": []
+// };
 
 const countryResByName = {
   "ID": "ARG",
@@ -58,11 +58,6 @@ describe('Country routes', () => {
     );
     it('should get 200', () => 
       agent.get("/countries/ARG").expect(200)
-    );
-    it("Should res with the country who match the ID pass by params", () => 
-    agent.get("/countries/ARG").expect((res) => {
-      expect(res.body).to.deep.equal([countryRes])
-    })
     );
   });
 });
