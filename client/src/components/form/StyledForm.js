@@ -33,6 +33,25 @@ export const InputForm = styled.input`
     font-size: 18px;
     color: ${colors.white};
 `
+export const ErrorP = styled.p`
+    &.danger{
+        color: red;
+        font-size: 25px;
+    }
+`
+export const SelectForm = styled.select`
+    width: 100%;
+    background: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    border: 1px solid ${colors.white};
+    font-size: 18px;
+    color: ${colors.white};
+`
+export const OptionForm = styled.option`
+    color: black;
+`
 
 export const ButtomForm = styled.button`
     border: 1px solid ${colors.white};

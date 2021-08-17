@@ -10,6 +10,7 @@ import {Content,ContentForm,ContentCountriess,CountriesDiv,StyledUList,StyledLIt
 function FormContent() {
     const countries = useSelector(state => state.countriesLoaded)
     const [search, setSearch] = useState();
+    const [errors, setErrors] = React.useState({});
     const [newActivity, setNewActivity] = useState({
         name: '',
         dificultad: '',
@@ -23,7 +24,7 @@ function FormContent() {
             ...newActivity,
             pais: [...newActivity.pais, name]
         })
-        // console.log(newActivity);
+        console.log(newActivity.temporada);
     }
     return (
         <>
@@ -45,7 +46,7 @@ function FormContent() {
                 </NavAbout>
                 <Content>
                     <ContentForm>
-                    <Form state={newActivity} setState={setNewActivity}/>
+                    <Form state={newActivity} setState={setNewActivity} newErrors={errors} setNewErrors={setErrors}/>
                     </ContentForm>
                     <ContentCountriess>
                         <SearchBar state={search} setState={setSearch}/>
