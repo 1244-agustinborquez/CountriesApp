@@ -1,7 +1,6 @@
 import React from 'react'
 import {Button} from './StyledPaginado'
 
-
 function Next(props) {
     function handleButtonClick(){
         if(props.stateStart < 243) {

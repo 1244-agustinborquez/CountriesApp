@@ -55,8 +55,8 @@ function CountryDetails() {
                         <CountryDetailContinent>{countriesDetails[0]?.continente}</CountryDetailContinent>
                         <CountryDetailCapital>{countriesDetails[0]?.capital}</CountryDetailCapital>
                         <CountryDetailSubregion>{countriesDetails[0]?.subregion}</CountryDetailSubregion>
-                        <CountryDetailArea>{countriesDetails[0]?.area}</CountryDetailArea>
-                        <CountryDetailPoblacion>{countriesDetails[0]?.poblacion}</CountryDetailPoblacion>
+                        <CountryDetailArea>Area: {countriesDetails[0]?.area}</CountryDetailArea>
+                        <CountryDetailPoblacion>Poblacion: {countriesDetails[0]?.poblacion}</CountryDetailPoblacion>
                     </CountryCardDetail>
                     <ActivityByCountryDetailContent>
                         {
