@@ -43,7 +43,7 @@ function Form(props) {
                 icon: 'success',
                 buttons: 'to accept'
             })
-            //alert("Your Create A Activity")
+           // alert("Your Create A Activity")
         }
         
     }

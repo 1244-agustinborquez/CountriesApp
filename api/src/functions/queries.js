@@ -4,7 +4,7 @@ const { Country, Actividad } = require('../db');
 
 const countryall = async () => {
     let countries = await Country.findAll({
-        attributes: [ 'ID', 'name', 'image', 'continente', 'capital' , 'poblacion' ]
+        attributes: [ 'ID', 'name', 'image', 'continente', 'capital' , 'poblacion','area' ]
     });
     if (!countries.length) {
         var allCountry = await axios.get('https://restcountries.eu/rest/v2/all');
@@ -24,7 +24,7 @@ const countryall = async () => {
         await Country.bulkCreate(allCountry);
     }   
     countries = await Country.findAll({
-        attributes: [ 'ID', 'name', 'image', 'continente', 'capital' , 'poblacion' ],
+        attributes: [ 'ID', 'name', 'image', 'continente', 'capital' , 'poblacion','area' ],
         include: Actividad
     });
     return countries;
@@ -55,6 +55,21 @@ const countryAllName = async (name) => {
     });
     console.log(countryName);
     return countryName;
+}
+
+const countryDetail = async (id) => {
+    let countryId = await Country.findAll({
+        attributes: [ 'ID', 'name', 'image', 'continente', 'capital' , 'poblacion', 'area', 'subregion' ],
+        where:{
+            ID:{
+                [Op.eq]: id
+            }
+        },
+        include: Actividad
+    })
+    
+    //var countryId = await Country.findByPk(id);
+    return countryId
 }
 
 const activityPost = async (body) => {
@@ -89,23 +104,6 @@ const getActivity = async () => {
     let activities = await Actividad.findAll();
     return activities
 }
-
-
-const countryDetail = async (id) => {
-    let countryId = await Country.findAll({
-        attributes: [ 'ID', 'name', 'image', 'continente', 'capital' , 'poblacion', 'area', 'subregion' ],
-        where:{
-            ID:{
-                [Op.eq]: id
-            }
-        },
-        include: Actividad
-    })
-    
-    //var countryId = await Country.findByPk(id);
-    return countryId
-}
-
 
 
 module.exports = {
